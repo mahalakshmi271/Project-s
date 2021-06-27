@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Form</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<form action="{% url 'regform' %}" method="post">
+	{% csrf_token %}
+	<div class="container">
+<h1>Registration Form</h1><br><br>
+
+<form>
+		<label for="firstname">FirstName  </label>
+		<input type="fname" name="fname" placeholder="Enter the FirstName"><br><br>
+		<label for="lastname">LastName  </label>
+		<input type="lname" name="lname" placeholder="Enter the LastName"><br><br>
+		<label for="email">Email Id  </label>
+		<input type="email" name="email" placeholder="Enter the Email"><br><br>
+		<label for="phonenumber">PhoneNumber </label>
+		<input type="number" name="number" placeholder="Enter the PhoneNumber"><br>
+		<label>Gender</label><br>
+		<div class="form-check">
+		<label class="form-check-label" for="radio1">
+			<input type="radio" class="form-check-input" id="female" name="gender" value="female">Female
+		</label>
+		</div>
+		<div class="form-check">
+		<label class="form-check-label" for="radio2">
+			<input type="radio" class="form-check-input" id="male" name="gender" value="male">Male
+		</label>
+		</div>
+		<label for="comment">Address</label>
+		<textarea class="form-control" rows="5" name="address" placeholder="Enter the Address"></textarea>
+		<label>Languages You Know</label><br>
+       <div class="form-check">
+      <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" id="check1" name="check" value="java">Java
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" id="check2" name="check" value="c++">C++
+  </label>
+</div>
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="checkbox" class="form-check-input" id="check3" name="check" value="html">HTML
+  </label>
+</div><br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</body>
+</html>
